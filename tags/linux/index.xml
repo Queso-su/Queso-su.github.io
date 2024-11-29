@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on QuesoX</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on QuesoX</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 28 Apr 2024 06:14:13 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu安装记录</title>
+      <link>http://localhost:1313/blog/ubuntu%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 28 Apr 2024 06:14:13 +0800</pubDate>
+      <guid>http://localhost:1313/blog/ubuntu%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;本文为了  &lt;em&gt;&lt;strong&gt;防止解决的问题在忘记解决方案时再出现&lt;/strong&gt;&lt;/em&gt;  而撰写。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;准备措施&#34;&gt;准备措施&lt;/h2&gt;&#xA;&lt;p&gt;这里采用 Ubuntu 23.10 Desktop 镜像版本，提供了图形化页面，可以根据自己的需求进行更换。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;拔掉要安装设备的网线。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;一个 U盘（U盘安装），大于等于 8G&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ubuntu.com/download/alternative-downloads&#34;&gt;最新版 Ubuntu 镜像（BT下载）&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0&#34;&gt;VMWare（虚拟机安装）&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://nigger.eastasia.cloudapp.azure.com:5244/d/Onedrive/System%20Backup/rufus-4.3.exe?sign=HhYnX8D6tmuLhwgMqWoh4sOSGsHBsACNGEA1HPt_H5A=:0&#34;&gt;Rufus 4.3 (U盘烧录)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;安装方式&#34;&gt;安装方式&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;烧录 ISO U盘启动安装进硬盘&lt;/li&gt;&#xA;&lt;li&gt;采用虚拟机直接安装进移动硬盘（Linux to Go）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;虚拟机安装&#34;&gt;虚拟机安装&lt;/h2&gt;&#xA;&lt;p&gt;打开 VMware&lt;/p&gt;&#xA;&lt;h3 id=&#34;创建虚拟机&#34;&gt;创建虚拟机&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;创建新虚拟机 -&amp;gt; 稍后安装系统 -&amp;gt; 选择Linux 版本&#xA;-&amp;gt; 选择位置 -&amp;gt; 一直默认到自定义硬件&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CD / DVD -&amp;gt; 选择使用ISO映像文件 ，选中你的 ISO&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;USB 控制器  -&amp;gt; 兼容性 改为 3.1&#xA;W&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;u盘安装&#34;&gt;U盘安装&lt;/h2&gt;&#xA;&lt;p&gt;使用 Refus 刷入镜像进入 U盘 ， 调整 BIOS 为 U盘 启动&lt;/p&gt;&#xA;&lt;h3 id=&#34;进入-ubuntu-镜像烧录&#34;&gt;进入 Ubuntu 镜像烧录&lt;/h3&gt;&#xA;&lt;p&gt;进入镜像或者U盘启动后&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
