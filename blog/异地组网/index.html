@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+
+
+
+<link rel="stylesheet" href="https://queso-su.github.io/custom.min.394b0b51f35dc8d15f1a455926121ed5d5efce5a373a4226214536619bd3781a.css" integrity="sha256-OUsLUfNdyNFfGkVZJhIe1dXvzlo3OkImIUU2YZvTeBo=" media="screen">
+
+<html lang="zh-cn" dir="ltr">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>无公网IP如何异地组网 ZEROTIER。 - QuesoX</title>
+
+</head>
+<body class="block-main">
+
+
+  <main >
+
+      
+    
+
+<header><!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <title>无公网IP如何异地组网 ZEROTIER。 - QuesoX</title>
+  </head>
+
+
+  <body >
+
+    <div class="header-container">
+
+      <div class="header-title-div">
+        <a href="/" class="header-title-text">
+            QuesoX 
+            
+        </a>
+        <a href="https://github.com/Queso-su/" class="header-title-github">
+          
+          <img src="https://queso-su.github.io/icon/github_icon.svg" alt="主题" class="header-tab-img">
+    
+        </a>
+      </div>
+
+      <div class="header-tab-div">
+
+        
+        <a href="/blog" class="header-tab-item-div">
+          
+          <img src="https://queso-su.github.io/icon/laptop_icon.svg" alt="博客" class="header-tab-img">
+          
+          <p  class="header-tab-text">博客</p>
+        </a>
+
+        
+        <a href="/tags/live" class="header-tab-item-div">
+          <img src="https://queso-su.github.io/icon/music_icon.svg" alt="生活" class="header-tab-img">
+          <p  class="header-tab-text">生活</p>
+        </a>
+
+        <a href="/setting" class="header-tab-item-div">
+          <img src="https://queso-su.github.io/icon/pencilbox_icon.svg" alt="工具" class="header-tab-img">
+          <p  class="header-tab-text">工具</p>
+        </a>
+        
+        <a href="/about" class="header-tab-item-div">
+          <img src="https://queso-su.github.io/icon/pencil_icon.svg" alt="关于" class="header-tab-img">
+          <p  class="header-tab-text">关于</p>
+        
+        </a>
+
+
+
+      </div>
+
+
+    </div>
+
+
+  </body>
+</html>
+  
+  </header>
+
+<div class = "toc-wrapper">
+    
+<div class="post-toc">
+     
+    <aside>
+        <header>
+        <h3>目录</h3>
+
+        </header><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#写这个干啥">写这个干啥</a></li>
+        <li><a href="#异地组网是什么">异地组网是什么</a></li>
+        <li><a href="#开始">开始</a></li>
+        <li><a href="#应用部分">应用部分</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+    <a href="#" id="toc-toggle"></a>
+     
+    </div>
+    
+
+
+</div> 
+<div class="single-container-pre">
+
+
+    
+        
+    <div class="single-title-div">
+        <h1 class="single-title-div-text">无公网IP如何异地组网 ZEROTIER。</h1>
+
+        <form name="input" action="javascript:history.back()" method="post" class="right">
+        <input type="submit" value="Back" class="single-btn-back">
+        </form>
+
+     
+
+    </div>
+
+    <div class="single-time">
+        
+
+        
+        
+        
+        <time datetime="2025-01-01" >January 1, 2025</time>
+
+        
+
+    </div>
+
+    
+    <div class="single-div">
+        
+        <div class="single-c-div">
+            <img src=https://images.quesox.com/i/2025/01/01/6774ef2c127d2.jpeg class="single-img"></img>
+        
+        
+
+            <div class="single-content">
+                <blockquote>
+<p>好奇与懒惰是驱动人类进步的最佳动力。</p>
+</blockquote>
+<h3 id="写这个干啥">写这个干啥</h3>
+<p>前段时间家里的服务器的IP一直内外网切换（坐标 广西北海联通），虽然解决了切换的问题，但是狡兔三窟，以防万一就做了个异地组网。实现无感访问PVE里的黑裙和WIndows，以及实现了串流游戏。这里我使用的是ZEROTIER，当然也有别的比如Tailscale，OpenP2P ，星空组网等等。</p>
+<h3 id="异地组网是什么">异地组网是什么</h3>
+<p>异地组网是指将分布在不同地理位置的网络设备通过特定的技术手段连接起来，形成一个统一的虚拟网络。这种技术允许不同地点的设备能够像在同一局域网内一样进行通信和资源共享。</p>
+<p>比如你家里的路由器内网是192.168.x.x,是独立的一个网段，它可以拓展出一个网段（虚拟局域网），将你的所有设备连接一起，通过ip或者各种方式访问。</p>
+<h4 id="应用场景">应用场景</h4>
+<p>远程监控与管理，对远程设备的实时监控和管理，提高运维效率。</p>
+<p>游戏与娱乐，串流游戏PC或，实现游戏玩家之间的低延迟直连，如MC局域网联机，如Moonlight串流。</p>
+<h3 id="开始">开始</h3>
+<h4 id="what-should-u-need">What should u need?</h4>
+<p><a href="https://www.zerotier.com/">ZeroTier (组网工具）</a><br>
+<a href="https://mao.fan/mynat">NAT类型检测（感谢创建这个网站的作者）</a></p>
+<p>可选部分：</p>
+<p><a href="https://github.com/LizardByte/Sunshine/releases">Sunshine（用于游戏串流的服务端）</a><br>
+<a href="https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0">Moonlight-qt（用于游戏串流的客户端）</a></p>
+<p><a href="https://www.todesk.com/">Todesk(维护使用的PlanB)</a></p>
+<p><a href="https://www.raidrive.com/">RaiDrive(将webdav映射为硬盘)</a></p>
+<h4 id="nat检测">NAT检测</h4>
+<p>我们所使用的ZeroTier是通过P2P类型打洞进行工作连接的</p>
+<p>NAT类型可能会对连接产生影响。特别是对于需要直接P2P（点对点）连接的游戏来说，NAT的复杂性可能会增加连接的难度和延迟。</p>
+<p>上面给的NAT类型检测中有测试以及介绍</p>
+<p>一般来说 NAT1到NAT3都可以顺利打洞进行连接，但最好控制在2和1，详细操作部分请自行Bing搜索 ，这边给出的建议操作是</p>
+<p>是否是校园网 -&gt;检查路由器NAT-&gt; DMZ 是否需要开启 -&gt; 检查光猫
+<img src="https://images.quesox.com/i/2025/01/01/6774e14a31a1e.png" alt="测试你的NAT.png"></p>
+<h4 id="zerotier-部分">Zerotier 部分</h4>
+<p>分为网页和客户端</p>
+<h5 id="网页部分">网页部分</h5>
+<ol>
+<li>
+<p>注册账号，选择基本模式
+<img src="https://images.quesox.com/i/2025/01/01/6774e4164cb73.png" alt="1735713807300.png"></p>
+</li>
+<li>
+<p>创建一个新的网络（create new network）
+<img src="https://images.quesox.com/i/2025/01/01/6774e46858160.png" alt="1735713892517.png"></p>
+</li>
+<li>
+<p>进入网络，找到你的网络ID，复制后到客户端操作
+<img src="https://images.quesox.com/i/2025/01/01/6774e4ed97a3c.png" alt="1735713992938.png">
+<img src="https://images.quesox.com/i/2025/01/01/6774e4ef1e6e1.png" alt="1735714024353.png"></p>
+</li>
+<li>
+<p>授权客户端（这一步需要你完成客户端操作后再进行），先打上钩，然后Authorize，添加完成
+<img src="https://images.quesox.com/i/2025/01/01/6774e61fe68d5.png" alt="1735714331274.png"></p>
+</li>
+</ol>
+<h5 id="客户端操作">客户端操作</h5>
+<ol>
+<li>
+<p>将你的每一台设备都装上对应客户端，在网页的download部分，不需要下载Server</p>
+</li>
+<li>
+<p>启动后，右下角找到小图标，JoinNew new network,填写你刚刚的网络ID，这样就算加入了
+<img src="https://images.quesox.com/i/2025/01/01/6774e5d14a9e7.png" alt="1735714253037.png"></p>
+</li>
+<li>
+<p>选择join下面的那个网络id，然后把Allow都勾上（也可以看你自己情况）回到网页端操作授权客户端
+<img src="https://images.quesox.com/i/2025/01/01/6774e6d0eefcd.png" alt="1735714508476.png"></p>
+</li>
+</ol>
+<h5 id="给每一天设备分配ip">给每一天设备分配IP</h5>
+<p>在上面两部做完之后我们就可以看到添加的设备了
+<img src="https://images.quesox.com/i/2025/01/01/6774e74ef2f9a.png" alt="1735714635016.png"></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Edit</th>
+          <th style="text-align: center">Auth</th>
+          <th style="text-align: center">Address</th>
+          <th style="text-align: center">Name/Desc</th>
+          <th style="text-align: center">Managed IPs</th>
+          <th style="text-align: center">Last Seen</th>
+          <th style="text-align: center">Version</th>
+          <th style="text-align: center">Phyical IP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>编辑</strong></td>
+          <td style="text-align: center">是否已授权</td>
+          <td style="text-align: center">地址（无关紧要）</td>
+          <td style="text-align: center">名字描述（编辑中设置）</td>
+          <td style="text-align: center"><strong>虚拟内网IP</strong></td>
+          <td style="text-align: center">上次上线时间</td>
+          <td style="text-align: center">版本</td>
+          <td style="text-align: center">真实物理IP</td>
+      </tr>
+  </tbody>
+</table>
+<p>这里我们只需要关注虚拟内网IP部分和编辑</p>
+<p>下拉到Advanced部分，选择一个你喜欢的网段（之后我们会通过这个来访问）
+<img src="https://images.quesox.com/i/2025/01/01/6774e77cf0ecb.png" alt="1735714681639.png"></p>
+<p>回到上面，点击edit，然后填写你设备的名称和分配一个喜欢的ip，前面与你的网段相同，最后一位自己选择，这里给一个翻译版本。
+<img src="https://images.quesox.com/i/2025/01/01/6774eb0e021df.png" alt="1735715591643.png"></p>
+<p>做完上面几步没问题的话我们就可以试试看是否组网成功了</p>
+<p>设备互ping一下,ping的地址是你设置的<strong>虚拟内网ip</strong> 而不是真实物理ip
+<img src="https://images.quesox.com/i/2025/01/01/6774ebda7ac13.png" alt="1735715796646.png"></p>
+<p>组网完成</p>
+<h3 id="应用部分">应用部分</h3>
+<h4 id="远程桌面游戏串流-moonlightsunshine">远程桌面游戏串流 Moonlight+sunshine</h4>
+<p>物理距离200公里的串流延迟5-8ms左右，帧数是动态的不是只有15fps，玩游戏的时候可以跑到240fps</p>
+<p>这一部分需要的话再补充教程
+<img src="https://images.quesox.com/i/2025/01/01/6774ece556a42.png" alt="1735716027050.png"></p>
+<p><img src="https://images.quesox.com/i/2025/01/01/6774ed0ae2b62.png" alt="1735716102526.png"></p>
+<h4 id="群晖与webdav以及文件传输访问">群晖与webdav以及文件传输访问</h4>
+<p>异地内网下访问各个设备</p>
+<p><img src="https://images.quesox.com/i/2025/01/01/6774edaa21f25.png" alt="1735716260681.png"></p>
+<p>本文完，下一篇写什么各位可以给点建议。</p>
+
+                
+            </div>
+        </div>
+        <div class="single-tag-div">
+             
+            <span class="single-tag"  > #All</span>
+             
+            <span class="single-tag"  > #AIO</span>
+             
+            <span class="single-tag"  > #GUIDE</span>
+            
+
+        </div>
+
+
+    </div>
+
+</div>
+
+  </main>
+
+    
+  
+  <footer>
+ 
+  </footer>
+</body>
+</html>
