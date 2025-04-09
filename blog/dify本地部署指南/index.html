@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+
+
+
+<link rel="stylesheet" href="https://queso-su.github.io/custom.min.c9129ebdfbcf0b80b394058ee8b6a04a7c87c4047f28dde6950638b4f51fc5b5.css" integrity="sha256-yRKevfvPC4CzlAWO6LagSnyHxAR/KN3mlQY4tPUfxbU=" media="screen">
+
+<html lang="zh-cn" dir="ltr">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dify 本地部署指南（Docker Compose 版本） - QuesoX</title>
+
+</head>
+<body class="block-main">
+
+
+  <main >
+
+      
+    
+
+<header><!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <title>Dify 本地部署指南（Docker Compose 版本） - QuesoX</title>
+  </head>
+
+
+  <body >
+
+    <div class="header-container">
+
+      <div class="header-title-div">
+        <a href="/" class="header-title-text">
+            QuesoX 
+            
+        </a>
+        <a href="https://github.com/Queso-su/" class="header-title-github">
+          
+          <img src="https://queso-su.github.io/icon/github_icon.svg" alt="主题" class="header-tab-img">
+    
+        </a>
+      </div>
+
+      <div class="header-tab-div">
+
+        
+        <a href="/blog" class="header-tab-item-div">
+          
+          <img src="https://queso-su.github.io/icon/laptop_icon.svg" alt="博客" class="header-tab-img">
+          
+          <p  class="header-tab-text">博客</p>
+        </a>
+
+        
+        <a href="/tags/live" class="header-tab-item-div">
+          <img src="https://queso-su.github.io/icon/music_icon.svg" alt="生活" class="header-tab-img">
+          <p  class="header-tab-text">生活</p>
+        </a>
+
+        <a href="/setting" class="header-tab-item-div">
+          <img src="https://queso-su.github.io/icon/pencilbox_icon.svg" alt="工具" class="header-tab-img">
+          <p  class="header-tab-text">工具</p>
+        </a>
+        
+        <a href="/about" class="header-tab-item-div">
+          <img src="https://queso-su.github.io/icon/pencil_icon.svg" alt="关于" class="header-tab-img">
+          <p  class="header-tab-text">关于</p>
+        
+        </a>
+
+
+
+      </div>
+
+
+    </div>
+
+
+  </body>
+</html>
+  
+  </header>
+
+<div class = "toc-wrapper">
+    
+<div class="post-toc">
+     
+    <aside>
+        <header>
+        <h3>目录</h3>
+
+        </header><nav id="TableOfContents">
+  <ul>
+    <li><a href="#目录">目录</a></li>
+    <li><a href="#环境准备">环境准备</a>
+      <ul>
+        <li><a href="#1-虚拟机配置">1. 虚拟机配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker环境配置">Docker环境配置</a>
+      <ul>
+        <li><a href="#1-安装docker--docker-compose">1. 安装Docker &amp; Docker Compose</a></li>
+        <li><a href="#2-配置镜像加速">2. 配置镜像加速</a></li>
+      </ul>
+    </li>
+    <li><a href="#dify部署">Dify部署</a>
+      <ul>
+        <li><a href="#1-克隆代码仓库">1. 克隆代码仓库</a></li>
+        <li><a href="#2-修改docker-compose配置">2. 修改Docker Compose配置</a></li>
+        <li><a href="#3-启动服务">3. 启动服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#deepseek-api集成">DeepSeek-API集成</a>
+      <ul>
+        <li><a href="#1-多模型配置方案">1. 多模型配置方案</a></li>
+        <li><a href="#2-界面配置验证">2. 界面配置验证</a></li>
+      </ul>
+    </li>
+    <li><a href="#聊天机器人部署">聊天机器人部署</a>
+      <ul>
+        <li><a href="#1-创建测试机器人">1. 创建测试机器人</a></li>
+        <li><a href="#2-模型切换配置">2. 模型切换配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#本地知识库部署说明">本地知识库部署说明</a>
+      <ul>
+        <li><a href="#1-扩展方案">1. 扩展方案</a></li>
+      </ul>
+    </li>
+    <li><a href="#常见问题解决">常见问题解决</a>
+      <ul>
+        <li><a href="#2-compose启动超时">2. Compose启动超时</a></li>
+        <li><a href="#3-api连接失败">3. API连接失败</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+    <a href="#" id="toc-toggle"></a>
+     
+    </div>
+    
+
+
+</div> 
+<div class="single-container-pre">
+
+
+    
+        
+    <div class="single-title-div">
+        <h1 class="single-title-div-text">Dify 本地部署指南（Docker Compose 版本）</h1>
+
+        <form name="input" action="javascript:history.back()" method="post" class="right">
+        <input type="submit" value="Back" class="single-btn-back">
+        </form>
+
+     
+
+    </div>
+
+    <div class="single-time">
+        
+
+        
+        
+        
+        <time datetime="2025-04-09" >April 9, 2025</time>
+
+        
+
+    </div>
+
+    
+    <div class="single-div">
+        
+        <div class="single-c-div">
+            <img src=http://images.quesox.com/i/2025/04/09/67f64f5b7b339.png class="single-img"></img>
+        
+        
+
+            <div class="single-content">
+                <blockquote>
+<p>本文含有AI部分参与编写，原汤化原食。</p></blockquote>
+<p><img src="http://images.quesox.com/i/2025/04/09/67f64f5a6274b.png" alt="截屏2025-04-09 18.43.09.png"></p>
+<h2 id="目录">目录</h2>
+<ol>
+<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#docker%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">Docker环境配置</a></li>
+<li><a href="#dify%E9%83%A8%E7%BD%B2">Dify部署</a></li>
+<li><a href="#deepseek-api%E9%9B%86%E6%88%90">DeepSeek-API集成</a></li>
+<li><a href="#%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2">聊天机器人部署</a></li>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E9%83%A8%E7%BD%B2%E8%AF%B4%E6%98%8E">本地知识库部署说明</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
+</ol>
+<hr>
+<h2 id="环境准备">环境准备</h2>
+<h3 id="1-虚拟机配置">1. 虚拟机配置</h3>
+<ul>
+<li><strong>虚拟化平台</strong>：Proxmox VE (PVE)</li>
+<li><strong>虚拟机编号</strong>：110</li>
+<li><strong>系统配置</strong>：
+<ul>
+<li>操作系统：Ubuntu 24.04 LTS</li>
+<li>内存：≥16GB</li>
+<li>存储：≥50GB SSD</li>
+<li>网络：NAT或桥接模式</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://images.quesox.com/i/2025/04/09/67f64951c71ac.png" alt="虚拟机控制台"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 系统更新与基础工具安装</span>
+</span></span><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+</span></span><span style="display:flex;"><span>sudo apt install git curl -y
+</span></span></code></pre></div><hr>
+<h2 id="docker环境配置">Docker环境配置</h2>
+<h3 id="1-安装docker--docker-compose">1. 安装Docker &amp; Docker Compose</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 如遇网络问题可改用清华源安装：</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. 设置清华Docker源</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    ca-certificates <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    curl <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    gnupg
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;deb [arch=&#34;</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;</span><span style="color:#66d9ef">$(</span>. /etc/os-release <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$VERSION_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; stable&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 安装Docker</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update <span style="color:#f92672">&amp;&amp;</span> sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 验证安装</span>
+</span></span><span style="display:flex;"><span>docker --version <span style="color:#f92672">&amp;&amp;</span> docker-compose --version
+</span></span></code></pre></div><h3 id="2-配置镜像加速">2. 配置镜像加速</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /etc/docker
+</span></span><span style="display:flex;"><span>sudo tee /etc/docker/daemon.json <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;registry-mirrors&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;https://docker.mirrors.ustc.edu.cn&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;https://registry.cn-hangzhou.aliyuncs.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart docker
+</span></span></code></pre></div><hr>
+<h2 id="dify部署">Dify部署</h2>
+<h3 id="1-克隆代码仓库">1. 克隆代码仓库</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/langgenius/dify.git
+</span></span><span style="display:flex;"><span>cd dify/docker
+</span></span></code></pre></div><h3 id="2-修改docker-compose配置">2. 修改Docker Compose配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 复制示例文件</span>
+</span></span><span style="display:flex;"><span>cp .env.example .env
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 编辑配置文件（按需修改端口/数据目录）</span>
+</span></span><span style="display:flex;"><span>nano docker-compose.yml
+</span></span></code></pre></div><p>建议修改项：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dify-web</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;80:6060&#34;</span>  <span style="color:#75715e"># 左侧为宿主机端口</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./data:/app/api/data</span>
+</span></span></code></pre></div><h3 id="3-启动服务">3. 启动服务</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 首次启动建议前台运行观察日志</span>
+</span></span><span style="display:flex;"><span>docker-compose up
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 正常启动后使用后台模式</span>
+</span></span><span style="display:flex;"><span>docker-compose up -d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看实时日志（Ctrl+C退出）</span>
+</span></span><span style="display:flex;"><span>docker-compose logs -f --tail<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
+</span></span></code></pre></div><p><img src="http://images.quesox.com/i/2025/04/09/67f64a2867182.png" alt="服务启动日志"></p>
+<hr>
+<h2 id="deepseek-api集成">DeepSeek-API集成</h2>
+<h3 id="1-多模型配置方案">1. 多模型配置方案</h3>
+<p>编辑 <code>.env</code> 文件添加：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># 基础模型配置</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">LLM_PROVIDER</span><span style="color:#f92672">=</span><span style="color:#e6db74">deepseek</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DEEPSEEK_API_KEY</span><span style="color:#f92672">=</span><span style="color:#e6db74">sk-xxxxxx</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 多模型支持（需v0.6.5+版本）</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ENABLE_MULTI_MODEL_PROVIDERS</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DEEPSEEK_MODEL_1</span><span style="color:#f92672">=</span><span style="color:#e6db74">deepseek-chat</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DEEPSEEK_MODEL_2</span><span style="color:#f92672">=</span><span style="color:#e6db74">deepseek-r1</span>
+</span></span></code></pre></div><h3 id="2-界面配置验证">2. 界面配置验证</h3>
+<ol>
+<li>登录Dify控制台 <code>http://&lt;IP&gt;/</code></li>
+<li>进入「模型供应商」设置：
+<img src="http://images.quesox.com/i/2025/04/09/67f64a28ba389.png" alt="模型配置界面"></li>
+<li>启用DeepSeek模型并测试连接</li>
+</ol>
+<hr>
+<h2 id="聊天机器人部署">聊天机器人部署</h2>
+<p><img src="http://images.quesox.com/i/2025/04/09/67f64e172aba9.png" alt="test.png"></p>
+<h3 id="1-创建测试机器人">1. 创建测试机器人</h3>
+<ol>
+<li>在Dify控制台点击「创建应用」</li>
+<li>填写应用信息：
+<ul>
+<li>名称：test</li>
+<li>类型：对话型应用</li>
+<li>模型选择：DeepSeek-chat/r1</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-模型切换配置">2. 模型切换配置</h3>
+<p>在应用设置的「模型配置」页：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">model_config</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">provider</span>: <span style="color:#ae81ff">deepseek</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">models</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">deepseek-chat</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">deepseek-r1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">parameters</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">max_tokens</span>: <span style="color:#ae81ff">2000</span>
+</span></span></code></pre></div><p><img src="http://images.quesox.com/i/2025/04/09/67f64de3dbd8a.png" alt="微信截图_20250409183712.png"></p>
+<hr>
+<h2 id="本地知识库部署说明">本地知识库部署说明</h2>
+<h3 id="1-扩展方案">1. 扩展方案</h3>
+<p>当内存≥32GB时，可通过Docker扩展部署：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 部署知识库服务</span>
+</span></span><span style="display:flex;"><span>docker run -d --name ragflow <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -p 8000:8000 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /opt/ragflow_data:/data <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --memory<span style="color:#f92672">=</span>16g <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  registry.cn-beijing.aliyuncs.com/ragflow/ragflow:latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 连接Dify服务</span>
+</span></span><span style="display:flex;"><span>在.env文件中添加：
+</span></span><span style="display:flex;"><span>KNOWLEDGE_BASE_ENDPOINT<span style="color:#f92672">=</span>http://ragflow:8000
+</span></span></code></pre></div><hr>
+<h2 id="常见问题解决">常见问题解决</h2>
+<p>fatal: unable to access &lsquo;<a href="https://github.com/...'">https://github.com/...'</a>: Failed to connect to github.com port 443</p>
+<pre tabindex="0"><code>
+**解决方案**：
+```bash
+# 配置Git代理（如有需要）
+git config --global http.proxy http://&lt;proxy_ip&gt;:&lt;proxy_port&gt;
+</code></pre><h3 id="2-compose启动超时">2. Compose启动超时</h3>
+<p><strong>排查命令</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 检查容器状态</span>
+</span></span><span style="display:flex;"><span>docker-compose ps
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看具体服务日志</span>
+</span></span><span style="display:flex;"><span>docker-compose logs dify-web
+</span></span></code></pre></div><h3 id="3-api连接失败">3. API连接失败</h3>
+<p><strong>调试方法</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 进入Web容器执行测试</span>
+</span></span><span style="display:flex;"><span>docker exec -it dify-web bash
+</span></span><span style="display:flex;"><span>curl -X POST -H <span style="color:#e6db74">&#34;Authorization: Bearer </span>$DEEPSEEK_API_KEY<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  https://api.deepseek.com/v1/chat/completions
+</span></span></code></pre></div><hr>
+<p><strong>文档版本</strong>：2.0 (Docker Compose)<br>
+<strong>更新说明</strong>：</p>
+<ul>
+<li>改用Git仓库克隆部署</li>
+<li>增加Docker Compose全链路配置</li>
+</ul>
+<pre tabindex="0"><code></code></pre>
+                
+            </div>
+        </div>
+        <div class="single-tag-div">
+             
+            <span class="single-tag"  > #All</span>
+             
+            <span class="single-tag"  > #GUIDE</span>
+            
+
+        </div>
+
+
+    </div>
+
+</div>
+
+  </main>
+
+    
+  
+  <footer>
+ 
+  </footer>
+</body>
+</html>
