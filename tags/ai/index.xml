@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on QuesoX</title>
+    <link>https://queso-su.github.io/tags/ai/</link>
+    <description>Recent content in AI on QuesoX</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Apr 2025 18:41:03 +0800</lastBuildDate>
+    <atom:link href="https://queso-su.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dify 本地部署指南（Docker Compose 版本）</title>
+      <link>https://queso-su.github.io/blog/dify%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 09 Apr 2025 18:41:03 +0800</pubDate>
+      <guid>https://queso-su.github.io/blog/dify%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</guid>
+      <description>本文含有AI部分参与编写，原汤化原食。&#xA;目录 环境准备 Docker环境配置 Dify部署 常见问题解决 环境准备 1. 虚拟机配置 虚拟化平台：Proxmox VE (PVE) 虚拟机编号：110 系统配置： 操作系统：Ubuntu 24.04 LTS 内存：≥16GB 存储：≥50GB SSD 网络：NAT或桥接模式 # 系统更新与基础工具安装 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y sudo apt install git curl -y Docker环境配置 1. 安装Docker &amp;amp; Docker Compose # 如遇网络问题可改用清华源安装： # 1. 设置清华Docker源 sudo apt-get install \ ca-certificates \ curl \ gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.</description>
+    </item>
+  </channel>
+</rss>
